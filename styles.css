@@ -63,6 +63,10 @@ h6 {
   --neutral: hsl(0, 6%, 24%);
   --gradient-100: hsl(0, 0%, 100%), hsl(0, 100%, 98%);
   --gradient-200: hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+  --desktop-padding-top: calc(235 / 800 * 100vh);
+  --desktop-padding-left: calc(165 / 1440 * 100vw);
+  --desktop-padding-right: calc(220 / 1440 * 100vw);
+  --image-width: calc(610 / 1440 * 100vw);
 }
 
 body {
@@ -92,9 +96,14 @@ header > img {
   height: 21px;
 }
 
+.content > picture img {
+  min-width: 100vw;
+}
+
 main {
   margin-top: 64px;
   text-align: center;
+  padding-inline: 32px;
 }
 
 main > h1 {
@@ -115,14 +124,14 @@ main p {
   color: var(--primary-red-100);
   margin-top: 15px;
   font-size: 14px;
-  padding-inline: 32px;
+  /* padding-inline: 32px; */
   line-height: 22px;
 }
 
 form {
   margin-top: 33px;
   position: relative;
-  padding-inline: 32px;
+  /* padding-inline: 32px; */
 }
 
 form #email {
@@ -151,7 +160,8 @@ form > button {
   top: 0;
   height: 100%;
   width: 64px;
-  right: 32px;
+  /* right: 32px; */
+  right: 0px;
   border-radius: 30px;
   border: none;
   background: linear-gradient(135deg, var(--gradient-200));
@@ -159,6 +169,10 @@ form > button {
   align-items: center;
   justify-content: center;
   box-shadow: 0px 15px 20px hsla(var(--primary-red), 0.4);
+}
+
+form > button:hover {
+  cursor: pointer;
 }
 
 .attribution {
@@ -180,13 +194,94 @@ form > button {
   text-decoration: underline;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   header {
     position: absolute;
-    top: 10px;
+    top: 39px;
+    left: var(--desktop-padding-left);
+    padding: 0;
   }
+
+  header > img {
+    height: 33px;
+  }
+
   .content {
     flex-direction: row-reverse;
+    padding-bottom: unset;
+    width: 100vw;
+    height: 100vh;
+    /* justify-content: stretch; */
+    /* padding-left: var(--desktop-padding-left); */
+  }
+
+  .content > picture {
+    width: calc(610 / 1440 * 100vw);
+    height: 100vh;
+  }
+
+  .content > picture img {
+    min-width: 100%;
+    object-position: top;
+    object-fit: none;
+    height: 100%;
+  }
+
+  main {
+    width: calc((1 - 610 / 1440) * 100vw);
+    padding: var(--desktop-padding-top) var(--desktop-padding-right) 0 var(--desktop-padding-left);
+    text-align: left;
+    margin-top: 0;
+    background-image: url("./images/bg-pattern-desktop.svg") no-repeat;
+    background-position: -5px;
+    min-height: 100vh;
+  }
+
+  main > h1 {
+    font-size: calc(64 / 1440 * 100vw);
+    line-height: 1.11;
+    letter-spacing: 0.267em;
+  }
+
+  main span {
+    line-height: 0.975;
+    letter-spacing: 0.27em;
+  }
+
+  main > p,
+  form {
+    padding: 0;
+  }
+
+  main > p {
+    font-size: 16px;
+    margin-top: 19px;
+    line-height: 28px;
+    letter-spacing: 0.003em;
+  }
+
+  form {
+    margin-top: 40px;
+  }
+
+  form #email {
+    border-radius: 30px;
+    padding-block: 27px 25px;
+    padding-inline: 30px;
+  }
+
+  #email::placeholder {
+    font-size: 16px;
+  }
+
+  form > button {
+    right: 0;
+    width: 99px;
+  }
+
+  .attribution {
+    width: calc((1 - 610 / 1440) * 100vw);
+    bottom: 16px;
   }
 }
 
