@@ -1,0 +1,221 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* ------------------------------------------------------------ */
+
+:root {
+  --primary-red: 0, 36%, 70%;
+  --primary-red-100: hsl(0, 36%, 70%);
+  --primary-red-200: hsl(0, 93%, 68%);
+  --neutral: hsl(0, 6%, 24%);
+  --gradient-100: hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+  --gradient-200: hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  position: relative;
+  height: max-content;
+  background: linear-gradient(135deg, var(--gradient-100));
+  background-size: 100% 800px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-bottom: 92px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  height: 84px;
+  padding-inline: 32px;
+}
+
+header > img {
+  width: auto;
+  height: 21px;
+}
+
+main {
+  margin-top: 64px;
+  text-align: center;
+}
+
+main > h1 {
+  text-transform: uppercase;
+  color: var(--neutral);
+  line-height: 42px;
+  font-size: 40px;
+  letter-spacing: 0.275em;
+}
+
+main span {
+  display: block;
+  font-weight: 300;
+  color: var(--primary-red-100);
+}
+
+main p {
+  color: var(--primary-red-100);
+  margin-top: 15px;
+  font-size: 14px;
+  padding-inline: 32px;
+  line-height: 22px;
+}
+
+form {
+  margin-top: 33px;
+  position: relative;
+  padding-inline: 32px;
+}
+
+form #email {
+  height: 48px;
+  width: 100%;
+  border-radius: 25px;
+  border: 2px solid hsla(var(--primary-red), 0.3);
+  padding-inline: 22px;
+  background: transparent;
+}
+
+#email::placeholder {
+  color: hsla(var(--primary-red), 0.75);
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 10px;
+}
+
+#email:focus {
+  outline: 2px solid var(--primary-red-100);
+  outline-offset: 1px;
+}
+
+form > button {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 64px;
+  right: 32px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, var(--gradient-200));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 15px 20px hsla(var(--primary-red), 0.4);
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0.5em;
+  font-size: 11px;
+  text-align: center;
+  margin-inline: auto;
+  width: 100vw;
+  color: var(--neutral);
+}
+
+.attribution a {
+  color: var(--primary-red-200);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 1280px) {
+  header {
+    position: absolute;
+    top: 10px;
+  }
+  .content {
+    flex-direction: row-reverse;
+  }
+}
+
+/* ------------------------------------------ */
+.img-comp-overlay {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  text-align: left;
+  max-width: 100vw;
+  z-index: 20;
+}
+
+.img-comp-img {
+  display: block;
+  height: 100%;
+  width: 375px;
+  max-width: none;
+  left: 0;
+  object-fit: none;
+  object-position: left top;
+}
+
+@media screen and (min-width: 1280px) {
+  .img-comp-img {
+    width: 100vw;
+  }
+}
+/* ------------------------------------------ */

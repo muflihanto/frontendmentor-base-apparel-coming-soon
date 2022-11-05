@@ -1,33 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Base Apparel coming soon page</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
 
-  We're coming soon
+    <!-- Google Fonts -->
 
-  Hello fellow shoppers! We're currently building our new fashion store. 
-  Add your email below to stay up-to-date with announcements and our launch deals.
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
 
-  Email Address
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
-</body>
+    <link
+      rel="stylesheet"
+      href="./styles.css"
+    />
+    <!-- <script
+      defer
+      src="./slider.js"
+    ></script> -->
+    <script
+      defer
+      src="./index.js"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <img
+        src="./images/logo.svg"
+        alt="Base Apparel Logo"
+      />
+    </header>
+    <div class="content">
+      <picture>
+        <source
+          srcset="./images/hero-desktop.jpg"
+          media="(min-width: 1280px)"
+        />
+        <img
+          src="./images/hero-mobile.jpg"
+          alt="Hero Image"
+        />
+      </picture>
+      <main>
+        <h1>
+          <span> We're </span>
+          coming soon
+        </h1>
+        <p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+        <form action="">
+          <label for="email">
+            <input
+              id="email"
+              type="email"
+              placeholder="Email Address"
+            />
+          </label>
+          <button type="submit">
+            <img
+              src="./images/icon-arrow.svg"
+              alt="Submit Button"
+            />
+          </button>
+        </form>
+      </main>
+    </div>
+
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a
+          href="https://github.com/muflihanto"
+          target="_blank"
+          >Muflihanto</a
+        >.
+      </p>
+    </footer>
+  </body>
 </html>
